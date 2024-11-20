@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif; /* Fonte da página */
+    display: flex; /* Alinhamento flexível para centralizar o conteúdo */
+    flex-direction: column; /* Direção em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    background-color: #282c34; /* Cor de fundo escura */
+    color: white; /* Texto branco */
+    margin: 0; /* Remove margens da página */
+    padding: 20px; /* Espaço interno na página */
+  }
+
+  /* Estilização do título */
+  h1 {
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    color: #ff6f61; /* Cor laranja */
+  }
+
+  /* Contêiner do tabuleiro */
+  #game-container {
+    display: grid; /* Usa grade para organizar as células */
+    grid-template-columns: repeat(10, 50px); /* 10 colunas de 50px cada */
+    grid-gap: 5px; /* Espaço entre as células */
+    background-color: #444; /* Cor de fundo do tabuleiro */
+    padding: 10px; /* Espaço interno do tabuleiro */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+
+  /* Estilização básica das células */
+  .cell {
+    width: 50px; /* Largura das células */
+    height: 50px; /* Altura das células */
+    display: flex; /* Centraliza conteúdo */
+    justify-content: center; /* Alinha horizontalmente o conteúdo */
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    font-size: 24px; /* Tamanho do texto dentro das células */
+    background-color: #61dafb; /* Cor inicial das células (azul) */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra cursor de clique */
+    transition: transform 0.2s, background-color 0.2s; /* Animação suave ao interagir */
+    color: transparent; /* Texto invisível inicialmente */
+  }
+
+  /* Efeito de hover para interação visual */
+  .cell:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente a célula ao passar o mouse */
+  }
+
+  /* Célula revelada */
+  .cell.revealed {
+    background-color: #b2f7ef; /* Cor de célula segura */
+    color: black; /* Mostra o texto (número de bombas adjacentes) */
+  }
+
+  /* Célula revelada contendo uma bomba */
+  .cell.bomb.revealed {
+    background-color: #ff6f61; /* Cor vermelha para bomba */
+    color: white; /* Ícone de bomba em branco */
+  }
